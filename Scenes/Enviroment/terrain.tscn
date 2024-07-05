@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8h8gu4b832id"]
+
+[ext_resource type="Script" path="res://Scripts/Enviroment/Terrain.gd" id="1_op8ag"]
+
+[sub_resource type="Curve" id="Curve_vvppl"]
+_data = [Vector2(0, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.172414, 1), 0.0, 0.0, 0, 0, Vector2(0.827586, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.560439), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Terrain" type="StaticBody2D"]
+collision_layer = 8
+script = ExtResource("1_op8ag")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-38, -38, 38, -38, 38, 38, -38, 38)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+
+[node name="Line2D" type="Line2D" parent="."]
+width_curve = SubResource("Curve_vvppl")
+joint_mode = 2

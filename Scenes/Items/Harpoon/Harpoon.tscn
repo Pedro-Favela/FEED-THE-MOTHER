@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw10v8fuf0s"]
+
+[ext_resource type="Script" path="res://Scripts/Items/Harpoon/Harpoon.gd" id="1_mg75f"]
+[ext_resource type="Texture2D" uid="uid://dapa226lxpgo6" path="res://Assets/Items/Harpoon and spear.png" id="3_pfapn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tl78a"]
+radius = 6.0
+height = 34.0
+
+[node name="Harpoon" type="CharacterBody2D"]
+position = Vector2(6, 0)
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("1_mg75f")
+display_name = "Harpoon"
+weight = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tl78a")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(13, -1)
+
+[node name="HarpoonAndSpear" type="Sprite2D" parent="."]
+position = Vector2(-1, 2.38419e-07)
+rotation = -1.5708
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_pfapn")
+region_enabled = true
+region_rect = Rect2(21.6985, 13.9433, 90.0043, 214.839)

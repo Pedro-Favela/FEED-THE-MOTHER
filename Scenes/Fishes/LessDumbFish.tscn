@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://nel0sffdhfcf"]
+
+[ext_resource type="Script" path="res://Scripts/Fishes/FishClass.gd" id="1_cdxhq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2w72"]
+radius = 8.0
+height = 36.0
+
+[node name="Fish" type="CharacterBody2D"]
+position = Vector2(8, 0)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_cdxhq")
+speed = 40.0
+health = 2
+display_name = "LessDumberFish"
+weight = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e2w72")
+debug_color = Color(0.917647, 0, 0.698039, 0.419608)

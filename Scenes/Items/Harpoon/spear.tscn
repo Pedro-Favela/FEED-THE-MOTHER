@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6prtwim3sp27"]
+
+[ext_resource type="Script" path="res://Scripts/Items/Harpoon/Spear.gd" id="1_pb3de"]
+[ext_resource type="Texture2D" uid="uid://dapa226lxpgo6" path="res://Assets/Items/Harpoon and spear.png" id="2_neen4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsf5w"]
+size = Vector2(29.5, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc555"]
+radius = 2.0
+
+[node name="Spear" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 8
+motion_mode = 1
+script = ExtResource("1_pb3de")
+display_name = "Spear"
+weight = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1.25, 0)
+shape = SubResource("RectangleShape2D_xsf5w")
+debug_color = Color(0.823529, 0, 0.0156863, 0.419608)
+
+[node name="Damage" type="Area2D" parent="."]
+visible = false
+position = Vector2(15, 0)
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+shape = SubResource("CircleShape2D_lc555")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.60444
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_neen4")
+region_enabled = true
+region_rect = Rect2(111.732, 49.3358, 40.9808, 180.067)
+
+[connection signal="body_entered" from="Damage" to="." method="_on_damage_body_entered"]

@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=3 uid="uid://dr6nw416wsppu"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/inventoryItem.gd" id="1_i032q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4nx6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vciw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.294118, 0.294118, 0.294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkrxd"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_oud0y"]
+offsets = PackedFloat32Array(0.0217391, 0.514493, 1)
+colors = PackedColorArray(0.619565, 0.619565, 0.619565, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dsqsf"]
+gradient = SubResource("Gradient_oud0y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wg47"]
+content_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_424da"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi3l1"]
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knv6u"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsbiw"]
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Item1" type="Button" groups=["InventoryItem"]]
+custom_minimum_size = Vector2(0, 50)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3vciw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o4nx6")
+script = ExtResource("1_i032q")
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkrxd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_dsqsf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5wg47")
+text = "Item_name"
+
+[node name="Item_qntt" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5wg47")
+text = "1x "
+horizontal_alignment = 2
+
+[node name="BtnDown" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+text = "v"
+
+[node name="BtnUp" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+text = "^"
+
+[node name="BtnInfo" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+text = "i
+"
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsbiw")
+
+[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Peso"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/HBoxContainer/BtnDown" to="." method="_on_btn_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/HBoxContainer/BtnUp" to="." method="_on_btn_up_pressed"]

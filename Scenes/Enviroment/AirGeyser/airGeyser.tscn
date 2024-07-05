@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuy2lwjgflp4f"]
+
+[ext_resource type="Script" path="res://Scripts/Enviroment/AirGeyser/AirGeyser.gd" id="1_0ggpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ismqk"]
+
+[node name="AirGeyser" type="StaticBody2D"]
+script = ExtResource("1_0ggpt")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-14, 6, -6, -7, 6, -7, 14, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ismqk")

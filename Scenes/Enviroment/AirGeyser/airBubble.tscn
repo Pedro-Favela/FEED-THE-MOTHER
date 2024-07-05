@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://db0xam0ikn3h6"]
+
+[ext_resource type="Script" path="res://Scripts/Enviroment/AirGeyser/airBubble.gd" id="1_0cylx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bo7ro"]
+
+[node name="AirBubble" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_0cylx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bo7ro")

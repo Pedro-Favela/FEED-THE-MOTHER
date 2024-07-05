@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjfdnnewjvvki"]
+
+[ext_resource type="Script" path="res://Scripts/Enviroment/Water.gd" id="1_33wph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1hc2"]
+
+[node name="Water" type="Area2D"]
+collision_layer = 2
+collision_mask = 65525
+script = ExtResource("1_33wph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m1hc2")
+debug_color = Color(0.54902, 0.909804, 1, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

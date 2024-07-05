@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://ttxlbgrtqq3"]
+
+[ext_resource type="PackedScene" uid="uid://bjfdnnewjvvki" path="res://Scenes/Enviroment/water.tscn" id="1_13rao"]
+[ext_resource type="PackedScene" uid="uid://brwnly3mkqong" path="res://Scenes/PlayerStuff/player.tscn" id="1_jhbyq"]
+[ext_resource type="PackedScene" uid="uid://olbeghikqf2s" path="res://Scenes/Enviroment/fishSpawner.tscn" id="3_ujti4"]
+[ext_resource type="PackedScene" uid="uid://jaghkr42fva2" path="res://Scenes/mother.tscn" id="6_nb3w0"]
+[ext_resource type="PackedScene" uid="uid://cuy2lwjgflp4f" path="res://Scenes/Enviroment/AirGeyser/airGeyser.tscn" id="7_gbsoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jateo"]
+size = Vector2(20, 18.8459)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Water" parent="." instance=ExtResource("1_13rao")]
+position = Vector2(680, 427)
+scale = Vector2(69.9256, 31.48)
+
+[node name="Player" parent="." instance=ExtResource("1_jhbyq")]
+position = Vector2(-307, 0)
+
+[node name="FishSpawner" parent="." instance=ExtResource("3_ujti4")]
+position = Vector2(824, 354)
+
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(-182, 183)
+scale = Vector2(24.9262, 8.25242)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D"]
+position = Vector2(0, 0.577055)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.905882, 0.298039, 0.168627, 0.419608)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(-193, 117)
+scale = Vector2(3.2862, 8.25242)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D8"]
+position = Vector2(0, 0.577055)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.905882, 0.298039, 0.168627, 0.419608)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(-422, 36)
+scale = Vector2(0.198352, 8.04814)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D10"]
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.905882, 0.298039, 0.168627, 0.419608)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(42, 423)
+rotation = 1.5708
+scale = Vector2(19.8829, 7.03494)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D2"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(189, 570)
+scale = Vector2(19.8829, 7.03494)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D3"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(481, 492)
+rotation = -0.523599
+scale = Vector2(19.8829, 7.03494)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D9"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(701, 425)
+scale = Vector2(9.95815, -10.876)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D4"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(857, 494)
+rotation = 0.785398
+scale = Vector2(14.8811, 7.32193)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D5"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(1175, 461)
+rotation = -0.523599
+scale = Vector2(30.4413, 7.44273)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D6"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Enviroment"]
+position = Vector2(1404, 300)
+rotation = 1.5708
+scale = Vector2(30.4413, 7.44273)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/StaticBody2D7"]
+scale = Vector2(0.857577, 0.371368)
+shape = SubResource("RectangleShape2D_jateo")
+debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
+
+[node name="MOTHER" parent="." instance=ExtResource("6_nb3w0")]
+position = Vector2(-400, 66)
+
+[node name="AirGeyser" parent="." instance=ExtResource("7_gbsoy")]
+position = Vector2(247, 538)

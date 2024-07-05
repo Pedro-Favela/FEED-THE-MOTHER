@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://olbeghikqf2s"]
+
+[ext_resource type="Script" path="res://Scripts/Enviroment/FishSpawner.gd" id="1_h7pem"]
+[ext_resource type="PackedScene" uid="uid://do0msa5ey7ikh" path="res://Scenes/Fishes/DumbFish.tscn" id="2_tg63l"]
+[ext_resource type="PackedScene" uid="uid://nel0sffdhfcf" path="res://Scenes/Fishes/LessDumbFish.tscn" id="3_m1aso"]
+
+[node name="FishSpawner" type="Node2D"]
+script = ExtResource("1_h7pem")
+Fishes = Array[PackedScene]([ExtResource("2_tg63l"), ExtResource("3_m1aso")])
