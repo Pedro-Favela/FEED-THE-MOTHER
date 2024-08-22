@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bppmb6drxhd3d"]
+
+[ext_resource type="Texture2D" uid="uid://ea7awe2ntfwb" path="res://Assets/Enviroment/Rocks.png" id="1_wk2vf"]
+
+[node name="Rock5" type="Polygon2D"]
+position = Vector2(0, 2)
+rotation = 0.0464202
+scale = Vector2(0.15, 0.15)
+offset = Vector2(-359.095, -404.79)
+texture = ExtResource("1_wk2vf")
+polygon = PackedVector2Array(267.978, 399.556, 453.371, 396.747, 453.371, 338.32, 265.73, 332.14)
+uv = PackedVector2Array(267.978, 399.556, 453.371, 396.747, 453.371, 338.32, 265.73, 332.14)

@@ -27,9 +27,9 @@ func _physics_process(delta):
 func _on_damage_body_entered(body):
 	if stuck or get_parent() == player.get_node("CurrentItem") or ("health" in body and body.health <= 0):
 		return
+	velocity = Vector2.ZERO
 	stuck = true
 	
-	velocity = Vector2.ZERO
 	call_deferred("reparent", body)
 	
 	if "health" in body and body.health > 0:

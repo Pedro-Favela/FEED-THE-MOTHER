@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brwnly3mkqong"]
+[gd_scene load_steps=16 format=3 uid="uid://brwnly3mkqong"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/Player.gd" id="1_tc1q1"]
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/StateMachine/StateMachine.gd" id="2_6kajl"]
@@ -10,12 +10,11 @@
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/StateMachine/States/air.gd" id="4_4880s"]
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/StateMachine/States/under_water.gd" id="5_72egl"]
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/BreathManager.gd" id="5_moun1"]
-[ext_resource type="Script" path="res://Scripts/PlayerStuff/StateMachine/States/over_water.gd" id="6_20tpd"]
 [ext_resource type="Script" path="res://Scripts/PlayerStuff/PlayerUI.gd" id="6_vpkmo"]
 [ext_resource type="PackedScene" uid="uid://cf5hhr3m44idf" path="res://Scenes/Inventory/inventory.tscn" id="7_g6qgq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hkpu"]
-height = 48.0
+height = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvl13"]
 radius = 9.0
@@ -25,7 +24,7 @@ radius = 13.0
 height = 54.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 8
+collision_mask = 72
 floor_snap_length = 5.3
 platform_on_leave = 1
 script = ExtResource("1_tc1q1")
@@ -34,9 +33,10 @@ script = ExtResource("1_tc1q1")
 script = ExtResource("2_6kajl")
 initial_state = NodePath("ground")
 
-[node name="ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("air")]
+[node name="ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("air", "under_water")]
 script = ExtResource("3_a0god")
 air = NodePath("../air")
+under_water = NodePath("../under_water")
 
 [node name="air" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground", "under_water")]
 script = ExtResource("4_4880s")
@@ -47,47 +47,43 @@ under_water = NodePath("../under_water")
 script = ExtResource("5_72egl")
 air = NodePath("../air")
 
-[node name="over_water" type="Node" parent="StateMachine"]
-script = ExtResource("6_20tpd")
-
 [node name="Player_visuals" parent="." instance=ExtResource("2_vvtxs")]
 position = Vector2(0, 17)
 scale = Vector2(0.15, 0.15)
 
 [node name="UpperBody" parent="Player_visuals/Skeleton2D/root" index="0"]
-scale = Vector2(0.999997, 0.999997)
+scale = Vector2(0.999996, 0.999996)
 
 [node name="Head" parent="Player_visuals/Skeleton2D/root/UpperBody" index="0"]
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 
 [node name="F_Arm" parent="Player_visuals/Skeleton2D/root/UpperBody" index="1"]
-scale = Vector2(0.999997, 0.999997)
+scale = Vector2(0.999995, 0.999995)
 
 [node name="B_Arm" parent="Player_visuals/Skeleton2D/root/UpperBody" index="2"]
-scale = Vector2(0.999997, 0.999997)
+scale = Vector2(0.999996, 0.999996)
 
 [node name="H_Arm" parent="Player_visuals/Skeleton2D/root/UpperBody" index="3"]
 scale = Vector2(1, 1)
 
 [node name="F_Leg" parent="Player_visuals/Skeleton2D/root/LowerBody" index="0"]
-scale = Vector2(0.999995, 0.999995)
+scale = Vector2(0.999994, 0.999994)
 
 [node name="F_Foot" parent="Player_visuals/Skeleton2D/root/LowerBody/F_Leg/F_Calf" index="0"]
-scale = Vector2(0.999997, 0.999997)
+scale = Vector2(0.999996, 0.999996)
 
 [node name="B_Leg" parent="Player_visuals/Skeleton2D/root/LowerBody" index="1"]
 scale = Vector2(0.999996, 0.999996)
 
 [node name="B_Foot" parent="Player_visuals/Skeleton2D/root/LowerBody/B_Leg/B_Calf" index="0"]
-scale = Vector2(0.999995, 0.999995)
+scale = Vector2(0.999994, 0.999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_6hkpu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.75, 1.75)
 position_smoothing_enabled = true
 
 [node name="CurrentItem" type="Node2D" parent="."]

@@ -44,6 +44,8 @@ func add_to_item_list(item):
 	instance.item_value = load(item.scene_file_path)
 	instance.item_name = item.display_name
 	instance.item_weight = item.weight
+	if item.get_node("Sprite2D"):
+		instance.item_image = item.get_node("Sprite2D").texture
 	items_list.add_child(instance)
 
 func _on_catch_item_body_entered(body):

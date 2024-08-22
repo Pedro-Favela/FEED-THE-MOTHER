@@ -5,6 +5,7 @@ var new_point: Vector2
 @export var patrol_range: Vector2 = Vector2(50, 100)
 @export var speed: float = 50
 @export var health: int = 1
+@export var view_range: float = 0
 
 func _ready():
 	gravity = gravity
@@ -33,7 +34,7 @@ func fish_physics(delta):
 	if is_instance_valid(player):
 		var distance = (global_position - player.global_position).length()
 		
-		if distance < 300 and player.in_water:
+		if distance < view_range and player.in_water:
 			escape(delta)
 		else:
 			idle(delta)

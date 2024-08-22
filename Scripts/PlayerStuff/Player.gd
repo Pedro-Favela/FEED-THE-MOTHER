@@ -2,34 +2,46 @@ extends CharacterBody2D
 
 @onready var Anim_tree:AnimationTree = $Player_visuals/AnimationTree
 @onready var Anim_state_machine = Anim_tree.get("parameters/playback")
-
-var JUMP_VELOCITY = -400.0
-var ACCEL = 12.0
-var SWIM_MAX_SPEED = 300.0
-var RUN_MAX_SPEED = 350.0
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+var health:float = 100
+
+var ACCEL = 1000.0
+var MAX_RUN_SPEED = 230.0
+var JUMP_VELOCITY = -350.0
+var SWIM_MAX_SPEED = 300.0
 
 var flipped:int = -1
 
 var in_water = false
 
-var health:float = 100
+var mouse_in_window:bool = true
+
 
 func _process(_delta):
 	#print(1.0/_delta)
-	$Camera2D.position = get_local_mouse_position()/7
+	if mouse_in_window:
+		$Camera2D.position = get_local_mouse_position()/7
 
+#func _notification(what):
+	#match what:
+		#NOTIFICATION_WM_MOUSE_ENTER:
+			#mouse_in_window = true
+		#NOTIFICATION_WM_MOUSE_EXIT:
+			#mouse_in_window = false
+	
 func _physics_process(_delta):
+	
 	var head_angle = get_angle_to(get_global_mouse_position())
 	if head_angle > -1.5 and head_angle < 1.5:
 		flipped = -1
 	else:
 		flipped = 1
 	
-	$Player_visuals.scale.x = 0.15 * flipped
+	if mouse_in_window:
+		$Player_visuals.scale.x = 0.15 * flipped
 	
-	if !(head_angle < 2.5 and head_angle > 0.5):
+	if !(head_angle < 2.5 and head_angle > 0.5) and mouse_in_window:
 		get_node("Player_visuals/Skeleton2D/root/UpperBody/Head").scale = Vector2(1,1) * flipped
 		get_node("Player_visuals/Skeleton2D/root/UpperBody/Head").rotation = (head_angle + deg_to_rad(75 * flipped)) * flipped
 	  
@@ -39,8 +51,8 @@ func _physics_process(_delta):
 
 func update_velocity(weight):
 	SWIM_MAX_SPEED = 275.0 - (weight * 2)
-	RUN_MAX_SPEED = 300.0 - (weight * 2)
-	JUMP_VELOCITY = -400.0 + (weight * 3)
+	MAX_RUN_SPEED = 300.0 - (weight * 2)
+	JUMP_VELOCITY = -350.0 + (weight * 3)
 
 
 

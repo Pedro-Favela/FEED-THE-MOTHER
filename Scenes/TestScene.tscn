@@ -13,13 +13,17 @@ size = Vector2(20, 18.8459)
 
 [node name="Water" parent="." instance=ExtResource("1_13rao")]
 position = Vector2(680, 427)
-scale = Vector2(69.9256, 31.48)
-
-[node name="Player" parent="." instance=ExtResource("1_jhbyq")]
-position = Vector2(-307, 0)
+scale = Vector2(69.9256, 28.76)
 
 [node name="FishSpawner" parent="." instance=ExtResource("3_ujti4")]
 position = Vector2(824, 354)
+
+[node name="MOTHER" parent="." instance=ExtResource("6_nb3w0")]
+position = Vector2(-366, 107)
+collision_layer = 65
+
+[node name="Player" parent="." instance=ExtResource("1_jhbyq")]
+position = Vector2(-193, 3)
 
 [node name="Enviroment" type="Node2D" parent="."]
 
@@ -136,9 +140,6 @@ metadata/_edit_group_ = true
 scale = Vector2(0.857577, 0.371368)
 shape = SubResource("RectangleShape2D_jateo")
 debug_color = Color(0.12549, 0.12549, 0.12549, 0.419608)
-
-[node name="MOTHER" parent="." instance=ExtResource("6_nb3w0")]
-position = Vector2(-400, 66)
 
 [node name="AirGeyser" parent="." instance=ExtResource("7_gbsoy")]
 position = Vector2(247, 538)

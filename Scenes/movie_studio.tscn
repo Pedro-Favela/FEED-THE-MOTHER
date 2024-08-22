@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://dunrf5hshqfvh"]
+
+[ext_resource type="PackedScene" uid="uid://brwnly3mkqong" path="res://Scenes/PlayerStuff/player.tscn" id="1_6w3jd"]
+[ext_resource type="Texture2D" uid="uid://dhuc0slqo3lfd" path="res://Assets/placeholder.png" id="1_pmt68"]
+[ext_resource type="PackedScene" uid="uid://jaghkr42fva2" path="res://Scenes/mother.tscn" id="2_3dkeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl0rs"]
+size = Vector2(1148, 61)
+
+[node name="MovieStudio" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6555.0
+offset_bottom = 3879.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_pmt68")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(566, 498)
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(298, 578)
+collision_layer = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(276, 20.5)
+shape = SubResource("RectangleShape2D_cl0rs")
+
+[node name="Player" parent="." instance=ExtResource("1_6w3jd")]
+position = Vector2(552, 433)
+
+[node name="UpperBody" parent="Player/Player_visuals/Skeleton2D/root" index="0"]
+scale = Vector2(0.999995, 0.999995)
+
+[node name="Head" parent="Player/Player_visuals/Skeleton2D/root/UpperBody" index="0"]
+scale = Vector2(0.999999, 0.999999)
+
+[node name="F_Arm" parent="Player/Player_visuals/Skeleton2D/root/UpperBody" index="1"]
+scale = Vector2(0.999994, 0.999994)
+
+[node name="B_Arm" parent="Player/Player_visuals/Skeleton2D/root/UpperBody" index="2"]
+scale = Vector2(0.999995, 0.999995)
+
+[node name="H_Arm" parent="Player/Player_visuals/Skeleton2D/root/UpperBody" index="3"]
+scale = Vector2(1, 1)
+
+[node name="F_Leg" parent="Player/Player_visuals/Skeleton2D/root/LowerBody" index="0"]
+scale = Vector2(0.999993, 0.999993)
+
+[node name="B_Leg" parent="Player/Player_visuals/Skeleton2D/root/LowerBody" index="1"]
+scale = Vector2(0.999995, 0.999995)
+
+[node name="B_Foot" parent="Player/Player_visuals/Skeleton2D/root/LowerBody/B_Leg/B_Calf" index="0"]
+scale = Vector2(0.999993, 0.999993)
+
+[node name="Camera2D" parent="Player" index="3"]
+zoom = Vector2(2.5, 2.5)
+
+[node name="UI" parent="Player" index="7"]
+visible = false
+
+[node name="MOTHER" parent="." instance=ExtResource("2_3dkeh")]
+position = Vector2(560, 565)
+
+[node name="Happines" parent="MOTHER" index="0"]
+visible = false
+
+[node name="Area2D" parent="MOTHER" index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="MOTHER" index="3"]
+visible = false
+
+[editable path="Player"]
+[editable path="Player/Player_visuals"]
+[editable path="MOTHER"]

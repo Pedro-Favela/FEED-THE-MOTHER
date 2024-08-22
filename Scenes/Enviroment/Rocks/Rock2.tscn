@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqnmuaedeoivk"]
+
+[ext_resource type="Texture2D" uid="uid://ea7awe2ntfwb" path="res://Assets/Enviroment/Rocks.png" id="1_aydb3"]
+
+[node name="Rock2" type="StaticBody2D"]
+scale = Vector2(0.15, 0.15)
+collision_layer = 8
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -6.66667)
+offset = Vector2(-175, -651.825)
+texture = ExtResource("1_aydb3")
+polygon = PackedVector2Array(4.34784, 665.217, 326.087, 672.826, 295.652, 434.783, 260.87, 390.217, 253.261, 339.13, 36.9565, 326.087)
+uv = PackedVector2Array(4.34784, 665.217, 326.087, 672.826, 295.652, 434.783, 260.87, 390.217, 253.261, 339.13, 36.9565, 326.087)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -13.3333)
+polygon = PackedVector2Array(-73.3333, -280, -6.66667, -293.333, 53.3333, -280, 53.3333, -206.667, -73.3333, -206.667)
+one_way_collision = true
