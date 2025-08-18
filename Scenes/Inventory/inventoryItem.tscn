@@ -36,13 +36,13 @@ gradient = SubResource("Gradient_oud0y")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wg47"]
 content_margin_left = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_424da"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi3l1"]
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knv6u"]
 bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_424da"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsbiw"]
 content_margin_top = 2.0
@@ -61,11 +61,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_o4nx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o4nx6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3vciw")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_o4nx6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_o4nx6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4nx6")
 script = ExtResource("1_i032q")
 metadata/_edit_group_ = true
 
@@ -116,9 +116,9 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 text = "v"
 
 [node name="BtnUp" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer"]
@@ -126,9 +126,9 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 text = "^"
 
 [node name="BtnInfo" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer"]
@@ -136,9 +136,9 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xi3l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_knv6u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_424da")
 text = "i
 "
 

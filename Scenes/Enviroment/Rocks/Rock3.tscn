@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ea7awe2ntfwb" path="res://Assets/Enviroment/Rocks.png" id="1_aeqxo"]
 
 [node name="Rock2" type="StaticBody2D"]
-scale = Vector2(0.15, 0.15)
+position = Vector2(0, 120)
 collision_layer = 8
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -15,6 +15,6 @@ polygon = PackedVector2Array(12.0345, 647.405, 22.8453, 451.008, 329.152, 441.99
 uv = PackedVector2Array(8.10812, 874.775, 18.9189, 678.378, 325.225, 669.369, 325.225, 879.279)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, 6.66667)
-polygon = PackedVector2Array(-86.6667, -140, -6.66667, -180, 80, -153.333, 80, -86.6667, -86.6667, -80)
+position = Vector2(-1, -4)
+polygon = PackedVector2Array(-74, -150, 59, -150, 59, -116, -74, -113)
 one_way_collision = true

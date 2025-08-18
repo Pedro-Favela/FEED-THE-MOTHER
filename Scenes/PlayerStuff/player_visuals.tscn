@@ -324,6 +324,7 @@ tracks/25/keys = {
 resource_name = "Idle"
 length = 4.0
 loop_mode = 1
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2025,7 +2026,7 @@ states/Running/position = Vector2(279, 214)
 states/Swimming/node = SubResource("AnimationNodeBlendTree_gh4ca")
 states/Swimming/position = Vector2(677, 66)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3sa4n"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_plvpn"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_hf5r8"), "Idle", "Falling", SubResource("AnimationNodeStateMachineTransition_dgxmm"), "Falling", "Idle", SubResource("AnimationNodeStateMachineTransition_lg341"), "Falling", "Running", SubResource("AnimationNodeStateMachineTransition_yqk88"), "Running", "Falling", SubResource("AnimationNodeStateMachineTransition_sd32p"), "Idle", "Jumping", SubResource("AnimationNodeStateMachineTransition_cjqly"), "Jumping", "Falling", SubResource("AnimationNodeStateMachineTransition_tgya8"), "Running", "Jumping", SubResource("AnimationNodeStateMachineTransition_ooi00"), "Falling", "Jumping", SubResource("AnimationNodeStateMachineTransition_36hw2"), "Jumping", "Swimming", SubResource("AnimationNodeStateMachineTransition_xitxk"), "Swimming", "Jumping", SubResource("AnimationNodeStateMachineTransition_6e73a"), "Falling", "Swimming", SubResource("AnimationNodeStateMachineTransition_3b772"), "Swimming", "Falling", SubResource("AnimationNodeStateMachineTransition_iqtc0")]
-graph_offset = Vector2(149, 26)
+graph_offset = Vector2(99, -57.9841)
 
 [node name="Player_visuals" type="Node2D"]
 position = Vector2(7, -2)
@@ -2238,9 +2239,6 @@ autoplay = "Idle"
 playback_default_blend_time = 0.5
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_v7bfp")
-}
 tree_root = SubResource("AnimationNodeStateMachine_u8278")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Running/TimeScale/scale = 5.5

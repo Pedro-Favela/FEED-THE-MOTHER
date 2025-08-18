@@ -19,16 +19,12 @@ var mouse_in_window:bool = true
 
 
 func _process(_delta):
-	#print(1.0/_delta)
+	if Input.is_action_just_pressed("ui_home"):
+		Engine.time_scale = 0.2
+	if Input.is_action_just_released("ui_home"):
+		Engine.time_scale = 1
 	if mouse_in_window:
 		$Camera2D.position = get_local_mouse_position()/7
-
-#func _notification(what):
-	#match what:
-		#NOTIFICATION_WM_MOUSE_ENTER:
-			#mouse_in_window = true
-		#NOTIFICATION_WM_MOUSE_EXIT:
-			#mouse_in_window = false
 	
 func _physics_process(_delta):
 	
@@ -53,6 +49,3 @@ func update_velocity(weight):
 	SWIM_MAX_SPEED = 275.0 - (weight * 2)
 	MAX_RUN_SPEED = 300.0 - (weight * 2)
 	JUMP_VELOCITY = -350.0 + (weight * 3)
-
-
-

@@ -888,6 +888,7 @@ radius = 19.3793
 size = Vector2(70.6667, 60.6667)
 
 [node name="MOTHER" type="CharacterBody2D"]
+rotation = 0.020944
 scale = Vector2(1.5, 1.5)
 collision_layer = 64
 script = ExtResource("1_0vd0f")
@@ -950,6 +951,7 @@ uv = PackedVector2Array(216.393, 891.803, 222.131, 765.574, 378.689, 790.164, 52
 bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/Body_R", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/Body_L", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/BigMouth", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/BigMouth/Tongue1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/BigMouth/Tongue1/Tongue1_2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/BigMouth/TopTeeth1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/BigMouth/BottomTeeth1", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "root/Tongue2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "root/Tongue2/Tongue2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0)]
 
 [node name="Tongue" type="Polygon2D" parent="MOTHER_visuals/Polygons"]
+z_index = 1
 position = Vector2(93.3333, -106.667)
 offset = Vector2(-632, -686)
 texture = ExtResource("2_wcu3h")
@@ -960,6 +962,7 @@ polygons = [PackedInt32Array(7, 5, 6), PackedInt32Array(8, 5, 7), PackedInt32Arr
 bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/Body_R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/Body_L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/BigMouth", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/BigMouth/Tongue1", PackedFloat32Array(0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0), "root/BigMouth/Tongue1/Tongue1_2", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0.5, 0.5, 0.5), "root/Tongue2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/Tongue2/Tongue2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="TopTeeth1" type="Polygon2D" parent="MOTHER_visuals/Polygons"]
+z_index = 1
 position = Vector2(93.3333, -186.667)
 offset = Vector2(-380, -700)
 texture = ExtResource("2_wcu3h")
@@ -993,6 +996,7 @@ polygon = PackedVector2Array(262.36, 201.124, 380.899, 172.472, 401.685, 67.4157
 uv = PackedVector2Array(262.36, 201.124, 380.899, 172.472, 401.685, 67.4157, 200.562, 6.74157, 179.213, 161.236)
 
 [node name="Eye1" type="Polygon2D" parent="MOTHER_visuals/Polygons"]
+z_index = 1
 position = Vector2(146.667, -246.667)
 offset = Vector2(-760, -100)
 texture = ExtResource("2_wcu3h")
@@ -1001,6 +1005,7 @@ polygon = PackedVector2Array(908.209, 73.8806, 895.522, 138.806, 787.313, 136.56
 uv = PackedVector2Array(908.209, 73.8806, 895.522, 138.806, 787.313, 136.567, 688.806, 85.0746, 716.418, 11.9403, 820.149, 8.95522)
 
 [node name="Eye5" type="Polygon2D" parent="MOTHER_visuals/Polygons"]
+z_index = 1
 position = Vector2(-60, -206.667)
 offset = Vector2(-90, -100)
 texture = ExtResource("2_wcu3h")

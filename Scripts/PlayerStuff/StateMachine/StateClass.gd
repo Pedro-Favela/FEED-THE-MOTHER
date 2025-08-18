@@ -10,10 +10,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func enter():
 	pass
 
-func process_frame(delta: float):
+func process_frame(_delta: float):
 	return null
 
-func process_physics(delta: float):
+func process_physics(_delta: float):
 	return null
 
 func exit():

@@ -47,4 +47,3 @@ func _on_damage_body_entered(body):
 			picked = false
 	
 	
-

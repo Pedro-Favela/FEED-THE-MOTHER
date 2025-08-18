@@ -7,5 +7,3 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if "in_water" in body:
 		body.in_water = false
-
-

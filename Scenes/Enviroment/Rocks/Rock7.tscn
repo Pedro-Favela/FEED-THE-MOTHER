@@ -3,8 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ea7awe2ntfwb" path="res://Assets/Enviroment/Rocks.png" id="1_awhkp"]
 
 [node name="Rock7" type="Polygon2D"]
-position = Vector2(0, 1)
-scale = Vector2(0.15, 0.15)
+position = Vector2(0, 120)
 offset = Vector2(-482.815, -394.035)
 texture = ExtResource("1_awhkp")
 polygon = PackedVector2Array(453.435, 391.302, 454.962, 350.844, 511.45, 354.279, 514.885, 392.447)

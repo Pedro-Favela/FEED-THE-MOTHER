@@ -4,6 +4,9 @@ var in_water = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var air_amount: float = 10
 
+func _ready():
+	$Area2D.connect("body_entered", body_entered)
+
 func _physics_process(delta):
 	velocity.y -= gravity/10 * delta
 	if velocity.y < -200:
@@ -12,3 +15,6 @@ func _physics_process(delta):
 	await get_tree().physics_frame
 	if in_water == false:
 		queue_free()
+
+func body_entered(body):
+	queue_free()

@@ -52,7 +52,7 @@ position = Vector2(0, 17)
 scale = Vector2(0.15, 0.15)
 
 [node name="UpperBody" parent="Player_visuals/Skeleton2D/root" index="0"]
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999994, 0.999994)
 
 [node name="Head" parent="Player_visuals/Skeleton2D/root/UpperBody" index="0"]
 scale = Vector2(0.999999, 0.999999)
@@ -73,7 +73,7 @@ scale = Vector2(0.999994, 0.999994)
 scale = Vector2(0.999996, 0.999996)
 
 [node name="B_Leg" parent="Player_visuals/Skeleton2D/root/LowerBody" index="1"]
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999994, 0.999994)
 
 [node name="B_Foot" parent="Player_visuals/Skeleton2D/root/LowerBody/B_Leg/B_Calf" index="0"]
 scale = Vector2(0.999994, 0.999994)

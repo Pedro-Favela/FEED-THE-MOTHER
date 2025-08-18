@@ -26,7 +26,10 @@ func fish_physics(delta):
 	rotation = velocity.angle()
 	if not in_water:
 		if is_on_wall():
-			velocity = Vector2(0, -speed * 6).rotated(270 * randi_range(-1,1))
+			if !get_wall_normal().dot(Vector2(0,1)) < 0.9:
+				velocity = velocity.bounce(get_wall_normal()) * 0.2
+			else:
+				velocity = Vector2(0, -speed * 6).rotated(270 * randi_range(-1,1))
 		velocity.y += gravity/2 * delta
 		move_and_slide()
 		return
@@ -40,8 +43,8 @@ func fish_physics(delta):
 			idle(delta)
 	
 	if is_on_wall():
+		
 		velocity = velocity.bounce(get_wall_normal()) * 0.9
-	
 	move_and_slide()
 
 func escape(delta):
